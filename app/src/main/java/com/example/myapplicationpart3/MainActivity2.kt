@@ -33,6 +33,7 @@ class MainActivity2 : AppCompatActivity() {
             startActivity(intent)
             //уничтожение активности
             finish()
+
         }
     }
     override fun onPause() {
