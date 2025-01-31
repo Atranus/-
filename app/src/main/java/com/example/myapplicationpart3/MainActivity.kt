@@ -19,18 +19,20 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(activityMainBinding.root)
+
+        Log.i("MainActivity", "onCreate")
     }
     override fun onPause() {
         super.onPause()
-        Log.i("Метод жизненного цикла", "onPause")
+        Log.i("MainActivity", "onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.i("Метод жизненного цикла", "onStop")
+        Log.i("MainActivity", "onStop")
     }
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Метод жизненного цикла", "onDestroy")
+        Log.d("MainActivity", "onDestroy")
     }
 }
