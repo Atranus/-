@@ -1,5 +1,6 @@
 package com.example.myapplicationpart3
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -20,7 +21,19 @@ class MainActivity2 : AppCompatActivity() {
 
         Log.i("MainActivity2", "onCreate")
 
-
+        activityMain2Binding.button.setOnClickListener {
+            //Переход между экранами
+            val intent = Intent(
+                //Откуда
+                this,
+                //куда
+                MainActivity::class.java
+            )
+            //Запуск активности
+            startActivity(intent)
+            //уничтожение активности
+            finish()
+        }
     }
     override fun onPause() {
         super.onPause()
