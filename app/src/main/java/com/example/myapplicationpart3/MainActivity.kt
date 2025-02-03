@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("MainActivity", "onCreate")
 
+        activityMainBinding.textView.text = intent.getStringExtra("Activity 2")
+
         activityMainBinding.button.setOnClickListener {
             //Переход между экранами
             val intent = Intent(
@@ -29,9 +31,10 @@ class MainActivity : AppCompatActivity() {
                 //куда
                 MainActivity2::class.java
             )
+            //Передача сообщений
+            intent.putExtra("Activity 1", activityMainBinding.editTextText.text.toString())
             //Запуск активности
             startActivity(intent)
-            //уничтожение активности
             finish()
         }
     }

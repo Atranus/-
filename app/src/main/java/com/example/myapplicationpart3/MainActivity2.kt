@@ -21,6 +21,8 @@ class MainActivity2 : AppCompatActivity() {
 
         Log.i("MainActivity2", "onCreate")
 
+        activityMain2Binding.textView.text = intent.getStringExtra("Activity 1")
+
         activityMain2Binding.button.setOnClickListener {
             //Переход между экранами
             val intent = Intent(
@@ -29,11 +31,11 @@ class MainActivity2 : AppCompatActivity() {
                 //куда
                 MainActivity::class.java
             )
+            intent.putExtra("Activity 2", activityMain2Binding.editTextText.text.toString())
             //Запуск активности
             startActivity(intent)
             //уничтожение активности
             finish()
-
         }
     }
     override fun onPause() {
